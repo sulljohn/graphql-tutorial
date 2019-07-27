@@ -5,6 +5,11 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+const cors = require('cors');
+
+// allow cross-origin requests
+app.use(cors());
+
 mongoose.connect('mongodb://localhost/graphql');
 mongoose.connection.once('open', () => {
   console.log('connected to database');
